@@ -1,0 +1,709 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+html{
+    background-image: url("./assets/mainPictures/portfolioWebsiteBackground.png");
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar{
+    height: 1em;
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(0, 0, 0);
+    padding: 0;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 100vw;
+}
+
+
+/* Main Div for the whole thing */
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ham-nav-toggle{
+    display: none;
+}
+
+
+/* navigation bar section starts */
+#desktop-nav{
+
+    /* Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 1;
+    position: fixed;
+    /* Box formatting */
+    gap:200px;
+    height: 70px;
+    width: auto;
+    padding: 10px 50px;
+    margin: 20px;
+
+     /* Glass Effect */
+     border-radius: 100px;
+     border: 1px solid rgba(126, 126, 126, 0.443);
+     background: linear-gradient(178deg, rgba(0, 0, 0, 0.532) 100%, rgba(0, 0, 0, 0.05) 100%); 
+     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+     backdrop-filter: blur(8px);
+ 
+     color: white;
+
+/* debugging */
+    /* border: 1px solid blue; */
+
+
+}
+
+.logo{
+    color: white;
+    font-family: 'Futura', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+    padding-left: 20px;;
+
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,1);
+}
+
+/* below is where the line in between the logo is (the animation) */
+.logo::before{
+
+    content: attr(data-text);
+    position: absolute;
+    color: white;
+    width: 50px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    border-right: 1px solid white ;
+}
+
+/* During hover of logo*/
+.logo:hover::before{
+    position: absolute;
+    width:210px;
+    overflow: hidden;
+    border-right: 12px solid white;
+}
+
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    list-style: none;
+    justify-content: center;
+}
+
+.nav-item{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+
+    padding: 15px;
+    height: 100%;
+    
+    /* Animation */
+
+    transition: 100ms ease-in-out;
+}
+
+.nav-item:hover{
+    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.08);
+
+}
+
+#ham-nav{
+    display: none;
+}
+
+.logo-ham{
+    display: none;
+}
+
+/* hero section */
+
+#heroSection{
+    display: flex;
+    margin-top: 10%;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    gap: 48px;
+
+}
+
+.heroText{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 16px;
+}
+
+
+/* Biki Balami */
+.title{
+    width: auto;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 43.2px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+
+    /* border: solid 1px red; */
+}
+
+.bio{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    /* border: solid 1px red; */
+}
+
+
+/* Buttons */
+.btn-container{
+    display: flex;
+    justify-content: left;
+    padding: 0;
+    gap: 14px;
+    /* border: 1px solid red; */
+}
+
+.btn{
+
+    /* styling */
+    display: flex;
+    width: 172.8px;
+    height: 51.3px;
+    padding: 11.7px 23.8px 12.6px 22px;
+    justify-content: center;
+    align-items: center;
+
+    /* Animation */
+    transition: all 0.2s ease-in-out;
+    
+}
+
+.btn:hover{
+    width: 200px;
+
+}
+
+/* Work with me */
+.btn-color-1{
+    border-radius: 43.2px;
+    border: 0.9px solid rgba(255, 255, 255, 0.50);
+    background: linear-gradient(180deg, rgba(155, 81, 224, 0.90) 0%, rgba(155, 81, 224, 0.50) 100%);
+    box-shadow: 0px 3.6px 10.8px 0px rgba(0, 0, 0, 0.15);
+
+    /* text format */
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 3.5999999046325684px 10.799999237060547px rgba(0, 0, 0, 0.15);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btn-color-1:hover{
+    cursor: pointer;
+    border-radius: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    background: linear-gradient(180deg, #D847FC 0%, #9B51E0 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Download CV */
+.btn-color-2{
+    border-radius: 43.2px;
+    border: 0.9px solid #E1C1FF;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.10) 100%);
+    box-shadow: 0px 3.6px 10.8px 0px rgba(0, 0, 0, 0.15);
+
+    /* Animation */
+    transition: 0.1;
+
+    /*Text Font*/
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 3.6px 10.8px rgba(0, 0, 0, 0.15);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btn-color-2:hover{
+    cursor: pointer;
+    border-radius: 48px;
+    border: 1px solid #E1C1FF;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.01) 100%);
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15), 1px 1px 12px 5px rgba(255, 255, 255, 0.05) inset;
+}
+
+
+
+.heroImage{    
+    width: 700px;
+}
+
+
+
+
+/* Social media */
+#socials-container{
+    display: flex;
+    gap: 16px;
+    justify-content: left;
+    /* border: 1px solid red; */
+}
+
+#socials-container img{ 
+    width: 40px;
+    height:40px;
+    transition: 0.2s ease;
+}
+
+.icon-linkedin{
+    transition: 0.3s;
+}
+.icon-linkedin:hover, .icon-insta:hover{
+    cursor: pointer;
+}
+
+
+
+
+/* Works section */
+
+
+/* title */
+#works{
+
+    margin: 100px 0 0 0;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+
+.work{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.workTitle{
+    margin: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 50px 0px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.workBody{
+    display: grid;
+    height: auto;
+    grid-auto-flow: column;
+    grid-auto-columns: 23%;
+    overflow-x: auto;
+    overflow-y: hidden;  
+    overscroll-behavior-inline: contain;
+
+    border: 1px solid rgba(126, 126, 126, 0.23);
+    background: linear-gradient(178deg, rgba(31, 31, 31, 0.532) 100%, rgba(0, 0, 0, 0.05) 100%); 
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+
+}
+
+.workElement{
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    margin: 40px 20px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .5);
+    transition: ease-in-out 100ms;
+}
+
+.workElement>img{
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    object-fit:cover;
+    border-radius: 16px;
+    transition: 150ms ease-in-out;
+}
+
+.workElement>img:hover{
+    position:relative;
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* pop up images */
+
+.popup-work1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+    z-index: 400;
+    display: none;
+    backdrop-filter: blur(16px);
+}
+
+.popup-work1>img{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid rgba(255, 255, 255, 0.40);
+    border-radius: 16px;
+    width: 75vh;
+    object-fit: cover;
+    background-color: rgba(0,0,0,.9);
+    width: 80%;
+    z-index: 400;
+}
+
+.popup-work1>span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.748);
+
+    border-radius: 16px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 3rem;
+    width: 3rem;
+    z-index: 100;
+}
+
+
+/* technical skillstitle */
+
+#skills>h1{
+    margin: 100px 0 50px 0;
+}
+#skills{
+    grid-area: skillsTitle;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 50px 0px;
+    gap: 30px;
+
+    /* title font */
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+
+}
+
+.skillsCategory{
+    display: flex;
+    gap: 80px;
+}
+
+.logoFrame{
+    width: 508px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 66px;
+    flex-wrap: wrap;
+    padding: 40px 0px;
+    
+    /* styling */
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    background: linear-gradient(180deg, rgba(143, 143, 143, 0.16) 0%, rgba(143, 143, 143, 0.01) 100%);
+    backdrop-filter: blur(15px);
+
+}
+
+.skillsLogo{
+    width: 94px;
+    height: 94px;
+    transition: 100ms ease-in-out;
+}
+
+.skillsLogo:hover{
+    transform: scale(1.1);
+}
+
+.skillExplanation{
+    grid-area: creativeExplanation;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 519px;
+    gap: 10px;
+
+}
+
+.skillExplanation>h2{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 121%; /* 43.56px */
+}
+
+.skillExplanation>h3{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.skillExplanation>p{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* end of skills */
+
+/* contacts start */
+
+    #contacts{
+        width: 100%;
+        padding: 150px 0px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contacts h1{
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 121%;
+        text-align: center;
+    }
+
+    #contactForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 400px;
+        margin: 40px auto;
+        padding: 40px;
+        background: linear-gradient(180deg, rgba(143, 143, 143, 0.16) 0%, rgba(143, 143, 143, 0.01) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.50);
+        border-radius: 32px;
+    }
+
+    #contactForm label {
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 121%; /* 43.56px */
+    }
+
+    #contactForm input, #contactForm textarea {
+        font-family: Poppins;
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    #contactForm button {
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 50px;
+        border-radius: 43.2px;
+        border: 0.9px solid rgba(255, 255, 255, 0.50);
+        background: linear-gradient(180deg, rgba(155, 81, 224, 0.90) 0%, rgba(155, 81, 224, 0.50) 100%);
+        box-shadow: 0px 3.6px 10.8px 0px rgba(0, 0, 0, 0.15);
+    
+        /* text format */
+        color: #FFF;
+        text-align: center;
+        text-shadow: 0px 3.5999999046325684px 10.799999237060547px rgba(0, 0, 0, 0.15);
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    #contactForm button:hover {
+        background-color: #0056b3;
+    }
+
+
+
+/* contacts end */
+.footer{
+    grid-area: footer;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 42px;
+    width: 70%;
+
+    flex-shrink: 0;
+
+    border-radius: 32px 32px 0px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    border-bottom: 0px;
+    background: linear-gradient(180deg, rgba(143, 143, 143, 0.16) 0%, rgba(143, 143, 143, 0.01) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    }
+
+.footer>h1{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+
+    /* typography */
+    overflow: hidden;
+    color: #FFF;
+    text-overflow: ellipsis;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.footer>.line{
+    width: 100%;
+    height: 1px;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.40);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.20);
+}
+
+.footer-nav-links{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+}
+
+.footer-nav-links>li{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+
+}
+
+.footer-nav-item{
+    color: white;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+
+    padding: 10px 15px;
+    border-radius: 16px;
+}
+
+.footer-nav-item:hover{
+    background-color: rgb(0, 0, 0, 0.15);
+}
+
+
+
+.footer>p{
+    color: #ffffff79;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

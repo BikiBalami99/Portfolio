@@ -1,0 +1,479 @@
+@media screen and (max-width: 1450px) {
+
+    /* #desktop-nav{
+        display: none;
+    } */
+
+
+
+    html{
+        background-size: cover;
+        /* background-attachment: fixed;  */
+    }
+
+
+
+    #desktop-nav{
+        gap: 100px;
+        height: 40px;
+        margin-top: 30px;
+        padding: 30px;
+    }
+
+    .logo{
+        color: white;
+        font-family: 'Futura', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        text-decoration: none;
+        padding-left: 20px;;
+    
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255,255,255,1);
+    }
+    
+    /* below is where the line in between the logo is (the animation) */
+    .logo::before{
+
+        
+        content: attr(data-text);
+        position: absolute;
+        color: white;
+        width: 10px;
+        overflow: hidden;
+        transition: 0.3s ease-in-out;
+        border-right: 1px solid white ;
+    }
+    
+    /* During hover of logo*/
+    .logo:hover::before{
+
+        position: absolute;
+        width: 66px;
+        overflow: hidden;
+        border-right: 12px solid white;
+    }
+
+    .nav-links{
+        gap: 20px;
+    }
+
+    .nav-item{
+        font-size: 30px;
+    }
+
+    .logo{
+        font-size:30px
+    }
+
+    .logo::before{
+        width: 5%
+    }
+
+    .heroImage{
+        width: 400px;
+    }
+
+    .logoFrame{
+        gap: 24px;
+        width: 300px;
+    }
+
+    .skillsLogo{
+        width: 64px;
+        height:64px;
+    }
+
+
+    #contactMe{
+
+        width: 50%;
+    }
+
+    .formSubDiv{
+        flex-direction: column;
+    }
+    .formSubDiv>input{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    #desktop-nav{
+        display: none;
+    }
+
+
+    .logo-ham{
+        display: inline;
+        margin: 10px;
+        margin-left: 80%;
+        height: 50px;
+    }
+
+    header{
+        top: 0px;
+        text-align: center;
+        position: fixed;
+        z-index: 300;
+        width: 100%;
+
+
+        
+        
+        
+        /* styling */
+        background: rgba(0, 0, 0, 0.9);
+
+    }
+
+    #ham-nav{
+        display: block;
+        text-align: left;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 300;
+        width: 100%;
+
+        transform: scale(1,0);
+        transform-origin: top;
+        transition: transform 300ms ease-in-out;
+
+        background: rgba(0, 0, 0, 0.9);
+        border-bottom: 1px solid rgba(126, 126, 126, 0.8);
+        /* background: linear-gradient(180deg, rgb(0, 0, 0,0.96) 100%, rgba(0, 0, 0, 0.5) 50%); */
+    }
+
+    #ham-nav > ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #ham-nav > ul > li{
+        margin-bottom: 1em;
+        margin-left: 1em;
+    }    
+
+    .nav-item-ham{
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-family: Poppins;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-decoration: none;
+        opacity: 0;
+        transition: opacity 100ms ease-in-out;
+
+        padding: 15px;
+        height: 100%;
+    }
+
+    .ham-nav-toggle{
+        display: none;
+    }
+
+    .ham-nav-toggle:checked ~ #ham-nav{
+        transform: scale(1,1);
+    }
+
+    .ham-nav-toggle:checked ~ #ham-nav .nav-item-ham{
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+    }
+
+
+    /* hamburrger lable */
+    .ham-nav-toggle-label{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 2em;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .ham-nav-toggle-label span,
+    .ham-nav-toggle-label span::before,
+    .ham-nav-toggle-label span::after {
+        display: block;
+        background: white;
+        height: 3px;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+    }
+
+    .ham-nav-toggle-label span::before,
+    .ham-nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+
+    .ham-nav-toggle-label span::before{
+        bottom: 8px;
+    }
+
+    .ham-nav-toggle-label span::after{
+        top: 8px;
+    }
+
+
+   
+
+    .nav-item-ham:hover{
+        color: rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .heroSection{
+        flex-direction: column;
+        padding: 12px;
+        align-items: center;
+    }
+    .workBody{
+        grid-auto-columns: 40%;
+    }
+
+
+
+
+    .popup-work1>span{
+        top: 5%;
+        right: 5%;
+    }
+   
+    /* Hero Section Title */
+
+    #heroSection{
+
+        width: 80%;
+        flex-direction: column;
+    }
+
+
+    .heroText{
+        width: 100%;
+        gap: 16px;
+    }
+
+    
+    .title{
+        font-size: 110px;
+        line-height: 150px;
+    }
+
+    /* hero section subtitle */
+    .subtitle{
+        font-size: 50px;
+    }
+
+    /* hero section Bio */
+    .bio{
+        width: 80%;
+    }
+
+    /* Hero image */
+    .heroImage{
+        display: none;
+    }
+
+
+    /* skills begin */
+    .logoFrame{
+        gap: 24px;
+        width: 300px;
+    }
+
+    .skillsLogo{
+        width: 64px;
+        height:64px;
+    }
+
+    .skillExplanation{
+        width: 300px;
+    }
+    .skillExplanation>h2{
+        font-size: 24px;
+    }
+
+    .skillExplanation>h3{
+        font-size: 18px;
+    }
+
+    .skillExplanation>p{
+        font-size: 12px;
+    }
+
+    /* skills end */
+}
+
+@media screen and (max-width: 800px){
+
+
+    /* hero section starts */
+
+    #heroSection{
+        width: 80%;
+    }
+    
+    .heroText{
+        margin-top: 50px;
+        width: 100%;
+        gap: 16px;
+    }
+    
+    
+    /* Biki Balami */
+    .title{
+        font-size: 70px;
+        line-height: 100px
+        /* border: solid 1px red; */
+    }
+
+    .subtitle{
+        font-size: 40px;
+    }
+    
+    .bio{
+        font-size: 14px;
+        /* border: solid 1px red; */
+    }
+    
+    
+    /* Buttons */
+    .btn-container{
+        gap: 20px;
+        /* border: 1px solid red; */
+    }
+    
+    .btn{
+    
+        /* styling */
+        display: flex;
+        width: 150px;
+        height: 44px;
+        padding: 11.7px 23.8px 12.6px 22px;
+        justify-content: center;
+        align-items: center;
+    
+        /* Animation */
+        transition: all 0.2s ease-in-out;
+        
+    }
+    
+    .btn:hover{
+        width: 200px;
+    }
+    
+    /* Work with me */
+    .btn-color-1,.btn-color-2{
+        font-size: 12px;
+    }
+    
+    .heroImage{    
+        width: 700px;
+    }
+
+
+    /* hero section ends */
+    
+
+
+    #skills{
+        gap: 2em;
+    }
+    .skillsCategory{
+        gap: .5em;
+        flex-direction: column;
+    }
+
+    .skillsCategory2{
+        flex-direction: column-reverse;
+    }
+
+    /* Get in touch Form */
+
+    #contacts h1{
+        padding: 20px;
+        font-size: 24px;
+    }
+
+    #contactForm{
+        width: 300px;
+        padding: 20px;
+    }
+
+
+    #contactMe{
+        width: 70%;
+        margin: 50px 10px;
+    }
+
+    #contactMe>h3{
+        font-size: 24px;
+    }
+
+    input{
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    textarea{
+        font-size: 14px;
+        height: 150px;
+    }
+
+    #contactMe>button{
+        height: 30px;
+        width: 100px;
+    }
+
+    /* footer */
+
+    .footer{
+        gap: 16px;
+        padding: 42px;
+        width: 90%;
+        }
+    
+    .footer>h1{
+
+        font-size: 20px;
+    }
+    
+    .footer-nav-item{
+        font-size: 16px;
+        font-weight: 500;
+        padding: 5px;
+    }
+    
+    
+    
+    .footer>p{
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    #works{
+        font-size: 34px;
+    }
+
+    .workTitle{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    #skills > h1{
+        font-size: 34px;
+
+    }
+
+}
